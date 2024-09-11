@@ -14,6 +14,7 @@ var (
 	grey   = color.New(color.FgWhite, color.Faint)
 	yellow = color.New(color.FgYellow)
 	red    = color.New(color.FgRed)
+	cyan   = color.New(color.FgCyan)
 )
 
 func EnableDebug() {
@@ -38,6 +39,14 @@ func Infof(format string, args ...any) {
 
 func Info(content any) {
 	white.Println(time.Now().Format("2006/01/02 15:04:05 [INFO] "), content)
+}
+
+func HighlightF(format string, args ...any) {
+	cyan.Println(time.Now().Format("2006/01/02 15:04:05 [INFO] "), fmt.Sprintf(format, args...))
+}
+
+func Highlight(content any) {
+	cyan.Println(time.Now().Format("2006/01/02 15:04:05 [INFO] "), content)
 }
 
 func Warnf(format string, args ...any) {
