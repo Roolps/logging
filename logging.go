@@ -42,11 +42,11 @@ func Info(content any) {
 }
 
 func HighlightF(format string, args ...any) {
-	cyan.Println(time.Now().Format("2006/01/02 15:04:05 [INFO] "), fmt.Sprintf(format, args...))
+	cyan.Println(time.Now().Format("2006/01/02 15:04:05 [HIGHLIGHT] "), fmt.Sprintf(format, args...))
 }
 
 func Highlight(content any) {
-	cyan.Println(time.Now().Format("2006/01/02 15:04:05 [INFO] "), content)
+	cyan.Println(time.Now().Format("2006/01/02 15:04:05 [HIGHLIGHT] "), content)
 }
 
 func Warnf(format string, args ...any) {
