@@ -143,7 +143,7 @@ func (p *Profile) Info(content any) {
 	if logChnl != nil {
 		logChnl <- fmt.Sprintf("%s %s INFO %v", time.Now().Format("02.01.2006 15:04:05"), p.Prefix, content)
 	}
-}
+
 
 func (p *Profile) Infof(format string, args ...any) {
 	fmt.Println(
