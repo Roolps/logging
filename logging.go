@@ -192,10 +192,10 @@ func (p *Profile) Error(content any) {
 		white.Sprint(content),
 	)
 	if errorChnl != nil {
-		errorChnl <- fmt.Sprintf("%s [%s] ERROR %v", time.Now().Format("02.01.2006 15:04:05"), p.Prefix, content)
+		errorChnl <- fmt.Sprintf("%s [%s] ERROR %v:%v %v", time.Now().Format("02.01.2006 15:04:05"), p.Prefix, filepath.Base(file), line, content)
 	}
 	if logChnl != nil {
-		logChnl <- fmt.Sprintf("%s [%s] ERROR %v", time.Now().Format("02.01.2006 15:04:05"), p.Prefix, content)
+		logChnl <- fmt.Sprintf("%s [%s] ERROR %v:%v %v", time.Now().Format("02.01.2006 15:04:05"), p.Prefix, filepath.Base(file), line, content)
 	}
 }
 
@@ -210,9 +210,9 @@ func (p *Profile) Errorf(format string, args ...any) {
 		white.Sprint(content),
 	)
 	if errorChnl != nil {
-		errorChnl <- fmt.Sprintf("%s [%s] ERROR %v", time.Now().Format("02.01.2006 15:04:05"), p.Prefix, content)
+		errorChnl <- fmt.Sprintf("%s [%s] ERROR %v:%v %v", time.Now().Format("02.01.2006 15:04:05"), p.Prefix, filepath.Base(file), line, content)
 	}
 	if logChnl != nil {
-		logChnl <- fmt.Sprintf("%s [%s] ERROR %v", time.Now().Format("02.01.2006 15:04:05"), p.Prefix, content)
+		logChnl <- fmt.Sprintf("%s [%s] ERROR %v:%v %v", time.Now().Format("02.01.2006 15:04:05"), p.Prefix, filepath.Base(file), line, content)
 	}
 }
